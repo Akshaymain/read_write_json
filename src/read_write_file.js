@@ -1,4 +1,5 @@
 const fs = require('fs')
+const formatWriteJson = require('./utils/writeFormatter')
 
 const readWriteData = async () => {
     fs.readFile('./data/customer_details.json','utf-8',(error,fileData) => {
@@ -13,12 +14,7 @@ const readWriteData = async () => {
 }
 
 const writeData = (data) => {
-    const writeFormat = {
-        name: data.firstName + data.secondName,
-        address: data.address.city + ' ' + data.address.pincode
-    }
-
-    fs.writeFile('./data/formatted_customer_data.json',JSON.stringify(writeFormat), (error) => {
+    fs.writeFile('./data/formatted_customer_data.json',JSON.stringify(formatWriteJson(data)), (error) => {
         if(error){
             console.log('Error writting file')
             return

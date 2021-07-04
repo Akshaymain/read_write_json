@@ -2,7 +2,8 @@
     "firstName": "Akshay",
     "secondName": "Kumar",
     "address": {
-        "city": "karkala",
+        "city1": "udupi",
+        "city2": "karkala",
         "pincode": 574104
     }
 }
